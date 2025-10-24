@@ -1,0 +1,190 @@
+Breed,Breed Group UKC,Height,Weight,Lifespan
+American Bully,Companion Dog,18,77.5,11
+Bichon Frise,Companion Dog,10.5,12.5,14.5
+Boston Terrier,Companion Dog,15.5,18.5,12
+Brussels Griffon,Companion Dog,8.5,10,13.5
+Bulldog,Companion Dog,14.5,49,9
+Cavalier King Charles Spaniel,Companion Dog,12.5,15.5,13.5
+Chihuahua,Companion Dog,7.5,4,15
+Chinese Crested,Companion Dog,11,9,15.5
+Dalmatian,Companion Dog,21.5,58,12
+English Bulldog,Companion Dog,14.5,49,9
+English Toy Spaniel,Companion Dog,10,11,11
+French Bulldog,Companion Dog,12,22,11
+Havanese,Companion Dog,10,10.5,15
+Italian Greyhound,Companion Dog,13.5,10.5,14.5
+Japanese Chin,Companion Dog,10,9.5,11
+Lhasa Apso,Companion Dog,10.5,15,13.5
+Maltese,Companion Dog,8.5,6.5,13.5
+Miniature Pinscher,Companion Dog,11.5,10.5,14
+Papillon,Companion Dog,9.5,8,15
+Pekingese,Companion Dog,9,10,11.4
+Pomeranian,Companion Dog,9.5,5,14
+Poodle Toy,Companion Dog,10,6,14
+"Poodle, Miniature",Companion Dog,12.5,24.5,14
+Pug,Companion Dog,12,16,14
+Schipperke,Companion Dog,11.5,14.5,13
+Shih Tzu,Companion Dog,9.5,13.5,14
+Tibetan Spaniel,Companion Dog,10,12,13.5
+Tibetan Terrier,Companion Dog,15.5,24,15.5
+Yorkshire Terrier,Companion Dog,7,5.5,13
+Affenpinscher,Companion Dog,10.5,10,13.5
+Coton de Tulear,Companion Dog,10,11.5,17
+Aidi,Guardian Dog,22.25,52.5,12.5
+Akbash Dog,Guardian Dog,30.5,107.5,10
+Bullmastiff,Guardian Dog,25.5,110,8
+Cane Corso,Guardian Dog,25.5,95,10.5
+Doberman Pinscher,Guardian Dog,26.5,80,11
+Dogo Argentino,Guardian Dog,25,90,12
+Giant Schnauzer,Guardian Dog,25.5,79.5,13.5
+Great Dane,Guardian Dog,31,149.5,8.5
+Great Pyrenees,Guardian Dog,28.5,100,12.5
+Greater Swiss Mountain Dog,Guardian Dog,26,112.5,9.5
+Kangal,Guardian Dog,30,120,13.5
+Komondor,Guardian Dog,26.5,107.5,11
+Kuvasz,Guardian Dog,28,92.5,11
+Mastiff,Guardian Dog,28,175,8
+Neapolitan Mastiff,Guardian Dog,27,132,8
+Newfoundland,Guardian Dog,27,126,9.5
+Perro de Presa Canario,Guardian Dog,24,113.5,10
+Rottweiler,Guardian Dog,24.5,112.5,9.5
+Saint Bernard,Guardian Dog,30.5,160,9
+"Schnauzer, Standard",Guardian Dog,19.5,39,14.5
+Tibetan Mastiff,Guardian Dog,27,115,11
+American Bulldog,Guardian Dog,23.5,92.5,11
+Anatolian Shepherd Dog,Guardian Dog,28,125,12
+Bernese Mountain Dog,Guardian Dog,25.25,92.5,8.5
+Black Russian Terrier,Guardian Dog,28,111.5,11
+Boxer,Guardian Dog,23,67.5,11
+Olde English Bulldogge,Guardian Dog,17.5,65,12.5
+American Cocker Spaniel,Gun Dog,14.5,22.5,12
+American Water Spaniel,Gun Dog,16.5,35,12
+Barbet,Gun Dog,21.75,50,13
+Boykin Spaniel,Gun Dog,16,32.5,12.5
+Brittany,Gun Dog,19,37.5,13
+Chesapeake Bay Retriever,Gun Dog,23.5,67.5,11.5
+Clumber Spaniel,Gun Dog,18.5,70,11
+Curly Coated Retriever,Gun Dog,25,77.5,11
+English Cocker Spaniel,Gun Dog,16.5,29.5,13
+English Setter,Gun Dog,24.5,62.5,12
+English Springer Spaniel,Gun Dog,19.5,42.5,13
+Field Spaniel,Gun Dog,17,42.5,12.5
+Flat Coated Retriever,Gun Dog,23.5,70,9
+German Longhaired Pointer,Gun Dog,25,67.5,13
+German Shorthaired Pointer,Gun Dog,23.5,57.5,11
+German Wirehaired Pointer,Gun Dog,22.5,60,15
+Golden Retriever,Gun Dog,22,65,11
+Gordon Setter,Gun Dog,25,62.5,12.5
+Irish Setter,Gun Dog,24,62.5,13.5
+Irish Water Spaniel,Gun Dog,22.5,56.5,12.5
+Labrador Retriever,Gun Dog,23,67.5,11
+Nova Scotia Duck Tolling Retriever,Gun Dog,19,43,13
+Pointer,Gun Dog,25.5,59.5,14.5
+"Poodle, Standard",Gun Dog,20,55,14
+Portuguese Water Dog,Gun Dog,20,47.5,12
+Spinone Italiano,Gun Dog,25,74,11
+Sussex Spaniel,Gun Dog,14.5,43,14
+Vizsla,Gun Dog,23,55,13
+Weimaraner,Gun Dog,25,72.5,11.5
+Welsh Springer Spaniel,Gun Dog,18,45,13.5
+Wirehaired Pointing Griffon,Gun Dog,22,52.5,13.5
+Australian Cattle Dog,Herding Dog,18.5,41.5,14
+Australian Kelpie,Herding Dog,18.5,41.5,11.5
+Australian Shepherd,Herding Dog,20.5,52.5,13.5
+Bearded Collie,Herding Dog,21,50,13
+Beauceron,Herding Dog,26,87.5,11
+Border Collie,Herding Dog,20,41,13.5
+Bouvier Des Flandres,Herding Dog,25.5,84.5,11
+Briard,Herding Dog,24.5,77.5,12
+Cardigan Welsh Corgi,Herding Dog,11.5,31.5,13.5
+Catahoula Leopard Dog,Herding Dog,23,72.5,12
+Collie,Herding Dog,23,60,13
+Dutch Shepherd,Herding Dog,23.75,58.5,12.5
+English Shepherd,Herding Dog,21,52.5,11.5
+German Shepherd Dog,Herding Dog,23.5,69,13
+Old English Sheepdog,Herding Dog,22.5,80,11
+Pembroke Welsh Corgi,Herding Dog,11,25,12.5
+Polish Lowland Sheepdog,Herding Dog,18.5,40,13
+Puli,Herding Dog,16,28.5,12.5
+Pumi,Herding Dog,16.75,25,12.5
+Schapendoes,Herding Dog,18,40.5,13.5
+Shetland Sheepdog,Herding Dog,14.5,17,13
+Akita,Northern,27,100,11.5
+Alaskan Klee Kai,Northern,17,19.5,14.5
+Alaskan Malamute,Northern,25.5,99.5,12
+American Eskimo Dog,Northern,14,27.5,14
+Chinese Shar-Pei,Northern,18.5,50,10
+Chow Chow,Northern,20,57.5,10
+Finnish Spitz,Northern,17.5,25,14
+Keeshond,Northern,18.5,50.5,13.5
+Norwegian Elkhound,Northern,20,51.5,13.5
+Samoyed,Northern,21.5,50,13
+Shiba Inu,Northern,15,20,14.5
+Siberian Husky,Northern,21.5,47.5,13
+American Foxhound,Scenthound,23.5,67.5,12
+American Leopard Hound,Scenthound,24,57.5,13.5
+Basset Hound,Scenthound,13.5,51.5,12.5
+Beagle,Scenthound,15,26.5,12.5
+Black & Tan Coonhound,Scenthound,24,75,11
+Black Mouth Cur,Scenthound,21,67.5,14
+Bloodhound,Scenthound,25,99,11
+Bluetick Coonhound,Scenthound,24,62.5,11.5
+"Dachshund, Miniature",Scenthound,9.5,6,14
+"Dachshund, Standard",Scenthound,13,22,14
+English Coonhound,Scenthound,23.5,57.5,11.5
+English Foxhound,Scenthound,24.5,55,11.5
+Harrier,Scenthound,20,52.5,13.5
+Otterhound,Scenthound,25.5,102.5,11.5
+Petit Basset Griffon Vendeen,Scenthound,14,37.5,13
+Plott Hound,Scenthound,23.5,57.5,13
+Redbone Coonhound,Scenthound,24,57.5,13.5
+Treeing Tennessee Brindle,Scenthound,20,40,11
+Treeing Walker Coonhound,Scenthound,23.5,60,12.5
+Afghan Hound,Sighthound & Pariah,26,55,13.5
+Basenji,Sighthound & Pariah,16.5,22.5,13.5
+Borzoi,Sighthound & Pariah,30,80,11.5
+Canaan Dog,Sighthound & Pariah,21.5,45,13.5
+Carolina Dog,Sighthound & Pariah,20.5,37.5,13.5
+Greyhound,Sighthound & Pariah,28.5,65,11.5
+Ibizan Hound,Sighthound & Pariah,25.5,47.5,12.5
+Irish Wolfhound,Sighthound & Pariah,30,107,7
+Peruvian Inca Orchid,Sighthound & Pariah,17.75,31.75,13
+Pharaoh Hound,Sighthound & Pariah,23,50,13
+Rhodesian Ridgeback,Sighthound & Pariah,25.5,75,12
+Saluki,Sighthound & Pariah,25.5,52.5,13.5
+Scottish Deerhound,Sighthound & Pariah,29.5,92.5,9.5
+Whippet,Sighthound & Pariah,19.5,32.5,13.5
+Airedale Terrier,Terrier,23,45,12.5
+American Hairless Terrier,Terrier,14,14,15
+American Pit Bull Terrier,Terrier,19.5,52.5,11
+Australian Terrier,Terrier,10.5,17.5,13
+Bedlington Terrier,Terrier,16.5,20,13.5
+Border Terrier,Terrier,13.5,13.5,13.5
+Bull Terrier,Terrier,22,52.5,12.5
+Cairn Terrier,Terrier,10.5,15,14
+Dandie Dinmont Terrier,Terrier,9.5,21,13.5
+Danish-Swedish Farmdog,Terrier,13.5,17.5,12
+German Pinscher,Terrier,18.5,35,13
+Glen of Imaal Terrier,Terrier,13.25,36,12.5
+Irish Terrier,Terrier,18.5,26,14
+Jack Russell Terrier,Terrier,11,13.5,13
+Kerry Blue Terrier,Terrier,18.5,39,13.5
+Lakeland Terrier,Terrier,14,16.5,13.5
+Manchester Terrier (Standard),Terrier,15.5,17,16
+Manchester Terrier (Toy),Terrier,11,9,16
+Miniature Bull Terrier,Terrier,12,23,12
+Norfolk Terrier,Terrier,9.5,11,14
+Parson Russell Terrier,Terrier,13.5,15,14
+Patterdale Terrier,Terrier,12.5,13.5,12
+Rat Terrier,Terrier,14,22.5,15
+Scottish Terrier,Terrier,10.5,20.5,13
+Sealyham Terrier,Terrier,11,21.5,13
+Silky Terrier,Terrier,9.5,9,14
+Skye Terrier,Terrier,8.5,29,13
+Smooth Fox Terrier,Terrier,15.5,16.5,13.5
+Staffordshire Bull Terrier,Terrier,15,31,13
+Toy Fox Terrier,Terrier,10,5.75,14
+Welsh Terrier,Terrier,15,20.5,13.5
+West Highland White Terrier,Terrier,11,18.5,14
+"Wheaten Terrier, Soft-Coated",Terrier,18.5,35,13
+Wire Fox Terrier,Terrier,15.5,16.5,13.5

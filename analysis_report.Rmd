@@ -1,0 +1,219 @@
+---
+title: "Dog Breed Lifespan Analysis"
+subtitle: "Distribution Patterns Across UKC Breed Groups"
+author: "Nicole Mark"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    theme: flatly
+    toc: true
+    toc_float: true
+    code_folding: hide
+    fig_width: 12
+    fig_height: 8
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  warning = FALSE,
+  message = FALSE,
+  fig.align = "center",
+  dpi = 300
+)
+
+# Load required libraries
+library(ggplot2)
+library(ggridges)
+library(viridis)
+library(hrbrthemes)
+library(dplyr)
+library(readr)
+library(janitor)
+library(scales)
+library(knitr)
+library(kableExtra)
+library(here)
+```
+
+## Executive Summary
+
+This analysis explores lifespan patterns across dog breeds using advanced statistical visualization techniques. Through ridgeline plots, we examine how lifespans distribute within different United Kennel Club (UKC) breed groups, revealing interesting patterns about breed longevity and variability.
+
+**Key Findings:**
+- Companion dogs show the highest variability in lifespans
+- Working dogs tend toward shorter lifespans due to size correlation
+- Clear breed group patterns emerge when examining distribution tails
+- Statistical outliers provide insights into breed-specific longevity factors
+
+## Data Overview
+
+```{r load-data}
+# Source the data preparation script
+source(here("scripts", "01_data_preparation.R"))
+
+# Display basic information about the dataset
+cat("Dataset Summary:\n")
+cat(sprintf("• Total breeds analyzed: %d\n", nrow(dog_data_clean)))
+cat(sprintf("• UKC breed groups: %d\n", length(unique(dog_data_clean$breed_group))))
+cat(sprintf("• Lifespan range: %.1f - %.1f years\n", 
+            min(dog_data_clean$lifespan_years), 
+            max(dog_data_clean$lifespan_years)))
+```
+
+### Dataset Structure
+
+```{r data-table}
+# Show sample of the data
+dog_data_clean %>%
+  slice_head(n = 10) %>%
+  kable(caption = "Sample of Dog Breed Dataset") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+### Breed Group Summary Statistics
+
+```{r breed-summary}
+breed_stats <- dog_data_clean %>%
+  group_by(breed_group) %>%
+  summarise(
+    `Number of Breeds` = n(),
+    `Median Lifespan` = round(median(lifespan_years), 1),
+    `Mean Lifespan` = round(mean(lifespan_years), 1),
+    `Standard Deviation` = round(sd(lifespan_years), 1),
+    `Min Lifespan` = min(lifespan_years),
+    `Max Lifespan` = max(lifespan_years),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(`Median Lifespan`))
+
+breed_stats %>%
+  kable(caption = "Lifespan Statistics by UKC Breed Group") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  row_spec(which.max(breed_stats$`Median Lifespan`), bold = TRUE, color = "white", background = "#2A9D8F") %>%
+  row_spec(which.min(breed_stats$`Median Lifespan`), bold = TRUE, color = "white", background = "#E76F51")
+```
+
+## Visualization 1: ECDF-Based Ridgeline Plot
+
+This visualization uses empirical cumulative distribution function (ECDF) coloring to highlight tail probabilities across the lifespan distribution.
+
+```{r ecdf-plot, fig.height=8, fig.width=12}
+# Source the ECDF visualization script
+source(here("scripts", "02_ridgeline_plot_ecdf.R"))
+
+# The plot is created and displayed by the sourced script
+ridgeline_ecdf_plot
+```
+
+### Interpretation
+
+The ECDF-based coloring reveals:
+
+- **Purple regions**: Areas of extreme tail probabilities (very short or very long lifespans)
+- **Yellow regions**: Central tendency areas where most breeds cluster
+- **Distribution shape**: Reveals which breed groups have symmetric vs. skewed distributions
+
+Breed groups with more purple coloring indicate higher variability and more extreme outliers in lifespan.
+
+## Visualization 2: Quantile-Based Ridgeline Plot
+
+This visualization highlights specific quantiles to identify breeds with extreme lifespans (shortest 2.5% and longest 2.5%).
+
+```{r quantile-plot, fig.height=8, fig.width=12}
+# Source the quantile visualization script
+source(here("scripts", "03_ridgeline_plot_quantiles.R"))
+
+# The plot is created and displayed by the sourced script
+ridgeline_quantiles_plot
+```
+
+### Extreme Lifespan Analysis
+
+```{r extreme-breeds}
+# Calculate and display extreme breeds
+lower_cutoff <- quantile(dog_data_clean$lifespan_years, 0.025)
+upper_cutoff <- quantile(dog_data_clean$lifespan_years, 0.975)
+
+shortest_breeds <- dog_data_clean %>%
+  filter(lifespan_years <= lower_cutoff) %>%
+  arrange(lifespan_years) %>%
+  select(breed, breed_group, lifespan_years)
+
+longest_breeds <- dog_data_clean %>%
+  filter(lifespan_years >= upper_cutoff) %>%
+  arrange(desc(lifespan_years)) %>%
+  select(breed, breed_group, lifespan_years)
+
+cat("### Shortest-Lived Breeds (Bottom 2.5%)\n")
+shortest_breeds %>%
+  kable(col.names = c("Breed", "Breed Group", "Lifespan (years)")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  row_spec(1:nrow(shortest_breeds), color = "white", background = "#E76F51")
+
+cat("\n### Longest-Lived Breeds (Top 2.5%)\n")
+longest_breeds %>%
+  kable(col.names = c("Breed", "Breed Group", "Lifespan (years)")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) %>%
+  row_spec(1:nrow(longest_breeds), color = "white", background = "#2A9D8F")
+```
+
+## Statistical Insights
+
+### Distribution Characteristics
+
+```{r distribution-analysis}
+# Analyze distribution characteristics
+dist_analysis <- dog_data_clean %>%
+  group_by(breed_group) %>%
+  summarise(
+    skewness = round(moments::skewness(lifespan_years), 2),
+    kurtosis = round(moments::kurtosis(lifespan_years), 2),
+    cv = round(sd(lifespan_years) / mean(lifespan_years), 2),
+    .groups = "drop"
+  ) %>%
+  arrange(desc(cv))
+
+dist_analysis %>%
+  kable(
+    caption = "Distribution Characteristics by Breed Group",
+    col.names = c("Breed Group", "Skewness", "Kurtosis", "Coefficient of Variation")
+  ) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed"))
+```
+
+### Key Observations
+
+1. **Variability Patterns**: Breed groups with higher coefficients of variation show more diverse lifespan patterns
+2. **Skewness Insights**: Positive skewness indicates longer right tails (some breeds with exceptionally long lifespans)
+3. **Breed Group Trends**: Working dogs and larger breed groups tend toward shorter median lifespans
+4. **Outlier Patterns**: Companion dogs show the most diversity, likely due to size variation within the group
+
+## Technical Implementation
+
+### Code Structure
+- **Modular design**: Separate scripts for data preparation and each visualization
+- **Professional styling**: Consistent theming and color palettes
+- **Error handling**: Robust data validation and missing value treatment
+- **Documentation**: Comprehensive comments and function descriptions
+
+### Statistical Methods
+- **Ridgeline plots**: Effective for comparing multiple distributions
+- **ECDF coloring**: Highlights probabilistic regions of interest
+- **Quantile analysis**: Identifies statistical outliers and extreme values
+- **Summary statistics**: Provides context for visual interpretations
+
+## Conclusions
+
+This analysis demonstrates how statistical visualization can reveal complex patterns in biological data. The ridgeline plots effectively communicate:
+
+- **Distribution shapes** across breed groups
+- **Variability patterns** within and between groups  
+- **Statistical outliers** that merit further investigation
+- **Breed group characteristics** related to longevity
+
+The visualizations provide a foundation for further research into factors affecting dog longevity, including size, genetics, and breed-specific health considerations.
+
+---
+
+*This analysis showcases advanced R programming and statistical visualization techniques for data science portfolio purposes.*

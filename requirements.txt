@@ -1,0 +1,25 @@
+# Required R packages for Dog Breed Lifespan Analysis
+# Install with: install.packages(c("package1", "package2", ...))
+
+# Core visualization packages
+ggplot2         # Grammar of graphics framework
+ggridges        # Ridgeline/joy plots for distribution comparison
+viridis         # Perceptually uniform color palettes
+hrbrthemes      # Additional ggplot2 themes
+
+# Data manipulation and import
+dplyr           # Data wrangling and transformation
+readr           # Fast and friendly data import
+janitor         # Data cleaning utilities
+
+# Formatting and presentation
+scales          # Scale functions for ggplot2
+knitr           # Dynamic report generation
+kableExtra      # Enhanced table formatting
+rmarkdown       # R Markdown document processing
+
+# Statistical analysis
+moments         # Statistical moments (skewness, kurtosis)
+
+# Utilities
+here            # Path management for reproducible file paths

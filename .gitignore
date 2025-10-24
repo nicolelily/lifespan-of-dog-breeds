@@ -1,49 +1,40 @@
-# History files
+# R files
 .Rhistory
 .Rapp.history
-
-# Session Data files
 .RData
-.RDataTmp
-
-# User-specific files
 .Ruserdata
-
-# Example code in package build process
-*-Ex.R
-
-# Output files from R CMD build
-/*.tar.gz
-
-# Output files from R CMD check
-/*.Rcheck/
-
-# RStudio files
 .Rproj.user/
 
-# produced vignettes
-vignettes/*.html
-vignettes/*.pdf
+# Output files
+*.log
+*.out
 
-# OAuth2 token, see https://github.com/hadley/httr/releases/tag/v0.3
-.httr-oauth
+# Plots (keep in outputs folder instead)
+*.png
+*.pdf
+*.jpeg
+*.jpg
+!outputs/plots/*.png
+!outputs/plots/*.pdf
 
-# knitr and R markdown default cache directories
-*_cache/
-/cache/
+# Data files (temporary or processed)
+*_temp.csv
+*_processed.csv
 
-# Temporary files created by R markdown
-*.utf8.md
-*.knit.md
+# System files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 
-# R Environment Variables
-.Renviron
+# IDE files
+.vscode/
+.idea/
 
-# pkgdown site
-docs/
-
-# translation temp files
-po/*~
-
-# RStudio Connect folder
-rsconnect/
+# Backup files
+*~
+*.bak
+*.backup
