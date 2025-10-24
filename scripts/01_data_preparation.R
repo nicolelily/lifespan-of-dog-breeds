@@ -17,6 +17,7 @@ suppressPackageStartupMessages({
   library(readr)
   library(dplyr)
   library(janitor)
+  library(forcats)
 })
 
 # Function to load and clean dog breed data
@@ -89,12 +90,12 @@ summarize_data <- function(data) {
 # Load the data if script is run directly
 if (!exists("dog_data_clean")) {
   # Check if running from project root or scripts directory
-  if (file.exists("dog_data_r.csv")) {
-    dog_data_clean <- load_dog_data("dog_data_r.csv")
-  } else if (file.exists("../dog_data_r.csv")) {
-    dog_data_clean <- load_dog_data("../dog_data_r.csv")
+  if (file.exists("data/dog_breeds_lifespan.csv")) {
+    dog_data_clean <- load_dog_data("data/dog_breeds_lifespan.csv")
+  } else if (file.exists("../data/dog_breeds_lifespan.csv")) {
+    dog_data_clean <- load_dog_data("../data/dog_breeds_lifespan.csv")
   } else {
-    stop("Could not find dog_data_r.csv. Please ensure the file exists in the correct location.")
+    stop("Could not find dog_breeds_lifespan.csv. Please ensure the file exists in the correct location.")
   }
   
   # Display summary

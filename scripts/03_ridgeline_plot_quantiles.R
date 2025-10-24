@@ -18,9 +18,16 @@ suppressPackageStartupMessages({
   library(ggplot2)
   library(ggridges)
   library(viridis)
-  library(hrbrthemes)
   library(scales)
   library(here)
+})
+
+# Try to load optional packages
+tryCatch({
+  suppressPackageStartupMessages(library(hrbrthemes))
+  use_hrbrthemes <- TRUE
+}, error = function(e) {
+  use_hrbrthemes <- FALSE
 })
 
 # Source data preparation script
@@ -53,7 +60,7 @@ create_ridgeline_quantiles <- function(data,
     ) +
     scale_fill_manual(
       name = "Lifespan Range",
-      values = c("#E76F51", "#F4A261", "#2A9D8F"),  # Warm to cool color palette
+      values = c("#2C5F5D", "#7BA5A3", "#C8D8D7"),  # Cool teal palette complementary to plasma
       labels = c(
         sprintf("Shortest %.1f%%", lower_quantile * 100),
         sprintf("Middle %.1f%%", (upper_quantile - lower_quantile) * 100),
@@ -70,9 +77,11 @@ create_ridgeline_quantiles <- function(data,
                         lower_quantile * 100, (1 - upper_quantile) * 100),
       caption = "Data: UKC breed classifications | Visualization: Nicole Mark"
     ) +
-    theme_ipsum_rc(grid_col = "grey92",
-                   axis_title_size = 12,
-                   axis_text_size = 10) +
+    {if(exists("use_hrbrthemes") && use_hrbrthemes) {
+      theme_ipsum_rc(grid_col = "grey92", axis_title_size = 12, axis_text_size = 10)
+    } else {
+      theme_minimal()
+    }} +
     theme(
       plot.title = element_text(size = 16, face = "bold", margin = margin(b = 8)),
       plot.subtitle = element_text(size = 11, color = "grey30", margin = margin(b = 16)),
